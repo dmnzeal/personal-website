@@ -1,6 +1,6 @@
 services:
   nginx:
-    build: nginx:alpine
+    image: nginx:alpine
     restart: unless-stopped
     environment:
       - VIRTUAL_HOST=dmnzeal.ru
