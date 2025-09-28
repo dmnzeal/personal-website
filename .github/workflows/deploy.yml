@@ -21,6 +21,7 @@ jobs:
           key: ${{ secrets.KEY }}
           script: |
             git clone https://github.com/dmnzeal/personal-website.git
+            git checkout main
             curl -fsSL https://get.docker.com -o get-docker.sh
             sudo sh get-docker.sh
             cd personal-website
