@@ -1,6 +1,38 @@
 services:
   nginx:
-    build: ./nginx
+    build: nginx:alpine
     restart: unless-stopped
+    environment:
+      - VIRTUAL_HOST=dmnzeal.ru
+      - LETSENCRYPT_HOST=dmnzeal.ru
+      - LETSENCRYPT_EMAIL=admin@dmnzeal.ru
+    volumes:
+      - html:/usr/share/nginx/html
+
+  nginx-proxy:
+    image: nginxproxy/nginx-proxy
+    environment:
+      - HTTPS_METHOD=redirect
     ports:
       - "80:80"
+      - "443:443"
+    volumes:
+      - html:/usr/share/nginx/html
+      - certs:/etc/nginx/certs:ro
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  acme-companion:
+    image: nginxproxy/acme-companion
+    environment:
+      - DEFAULT_EMAIL=admin@dmnzeal.ru
+    volumes_from:
+      - nginx-proxy
+    volumes:
+      - certs:/etc/nginx/certs:rw
+      - acme:/etc/acme.sh
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+volumes:
+  html:
+  certs:
+  acme:
