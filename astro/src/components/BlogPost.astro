@@ -1,0 +1,32 @@
+---
+const { post } = Astro.props;
+---
+
+<article>
+  <h2><a href={post.url}>{post.frontmatter.title}</a></h2>
+  <p>{post.frontmatter.description}</p>
+  <time datetime="">{post.frontmatter.pubDate.toString().slice(0, 10)}</time>
+</article>
+
+<style>
+  article {
+    position: relative;
+    list-style-type: none;
+  }
+  article {
+    background-color: #202020;
+    border-radius:;
+    padding: 1rem;
+  }
+  h2 {
+    margin-top: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  time {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+  }
+</style>

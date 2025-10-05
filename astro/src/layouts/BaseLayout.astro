@@ -1,0 +1,27 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+
+const { pageTitle, description, keywords } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta name="generator" content={Astro.generator} />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+  </head>
+  <body>
+    <div class="container">
+      <Header />
+      <slot />
+    </div>
+  </body>
+</html>

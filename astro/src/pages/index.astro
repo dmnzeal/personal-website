@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import About from '../components/About.astro';
+import Contacts from '../components/Contacts.astro';
+
+const pageTitle = 'Унвониддин Гулмирзоев';
+const description = 'Fullstack разработчик из Тюмени';
+const keywords =
+  'Unvoniddin Gulmirzoev, Унвониддин Гулмирзоев, fullstack developer, fullstack разработчик, frontend developer, frontend разработчик, backend developer, backend разработчик, web developer, веб-разработчик';
+---
+
+<BaseLayout pageTitle={pageTitle} description={description} keywords={keywords}>
+  <div class="content">
+    <About />
+    <Contacts />
+  </div>
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import BlogPost from '../components/BlogPost.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const allPosts = Object.values(
+  import.meta.glob('./posts/*.md', { eager: true }),
+);
+const pageTitle = 'Блог — Унвониддин Гулмирзоев';
+---
+
+<BaseLayout pageTitle={pageTitle} description="" keywords="">
+  <section class="blog">
+    <h2>blog</h2>
+    <div class="blog-list">
+      {allPosts.map((post) => <BlogPost post={post} />)}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+</style>

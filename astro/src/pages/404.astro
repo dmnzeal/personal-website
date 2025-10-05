@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/404.css';
+
+const pageTitle = '404';
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="error-wrapper">
+    <h1 class="error-wrapper__heading">404</h1>
+    <p class="error-wrapper__text">Похоже вы ошиблись ссылкой</p>
+  </div>
+</BaseLayout>

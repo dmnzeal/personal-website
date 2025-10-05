@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --dark-bg-color: #0f0f0f;
+  --dark-secondary-color: pink;
+  --dark-text-color: ghostwhite;
+  --dark-text-secondary-color: azure;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  color: #c4c4c4;
+  background: var(--dark-bg-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: ghostwhite;
+
+  font-family: 'Prompt', sans-serif;
+  /* font-size: 200%; */
+  /* font-weight: bold; */
+}
+
+a {
+  color: var(--dark-secondary-color);
+}
+
+.container {
+  padding: 1rem;
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
